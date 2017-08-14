@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="PiUptimeUPS_Sample2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PiUptimeUPS_Sample2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="24" TextWrapping="WrapWholeWords">
+            This sample shows event driven monitoring that triggers on the falling and rising change of GPIO 26.
+            It is more performant than polling and includes built-in debounce code in case the GPIO 26 line briefly changes state.
+        </TextBlock>
+        <TextBlock Grid.Row="1" x:Name="GpioStatus"
+                Margin="10,10,10,10"
+                Text="{x:Bind ViewModel.GpioStatus, Mode=OneWay}"
+                FontSize="24"
+        />
+    </Grid>
+</Page>
